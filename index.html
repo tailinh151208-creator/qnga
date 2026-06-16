@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Lưu bút Quỳnh Nga</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
+    <style>
+        body { background-color: #0d47a1; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: 'Segoe UI', sans-serif; }
+        #book { width: 800px; height: 500px; background: white; }
+        .page { padding: 40px; background: #e3f2fd; border: 1px solid #90caf9; box-sizing: border-box; }
+        form { display: flex; flex-direction: column; gap: 15px; }
+        input, textarea { padding: 10px; border: 1px solid #bbdefb; border-radius: 5px; }
+        #submitBtn { background: #1976d2; color: white; border: none; padding: 12px; cursor: pointer; transition: 0.3s; border-radius: 5px; }
+        #submitBtn.glow { box-shadow: 0 0 20px #2196f3, 0 0 40px #2196f3; background: #0d47a1; transform: scale(1.05); }
+    </style>
+</head>
+<body>
+<div id="book">
+    <div class="page">
+        <h2>Gửi lưu bút cho Quỳnh Nga</h2>
+        <form id="luuButForm">
+            <input type="text" name="name" placeholder="Tên của bạn" required>
+            <textarea name="message" placeholder="Viết lời nhắn..." required></textarea>
+            <button type="submit" id="submitBtn">Xác nhận gửi</button>
+        </form>
+    </div>
+    <div class="page">
+        <h2>Lời nhắn đã gửi</h2>
+        <p>Cảm ơn bạn đã gửi những lời yêu thương đến Quỳnh Nga!</p>
+        <a href="https://docs.google.com/spreadsheets/d/1DPJWD55aRy_IGx5gNEqH2C5M4N5rqGHztNKjmrOv8cU/edit" target="_blank">Xem danh sách lời nhắn</a>
+    </div>
+</div>
+<script>
+    .ready(function() {
+        .turn({ width: 800, height: 500, autoCenter: true });
+        const form = document.getElementById('luuButForm');
+        const btn = document.getElementById('submitBtn');
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzxpaDqMhmS5OiIaRmwUWu345usgxJwBTkoyioDgogOHehqMNrsuBcDAVMxY1ZrFi9u4g/exec';
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            let count = parseInt(localStorage.getItem('sentCount') || 0);
+            if (count >= 3) { alert("Bạn đã đạt giới hạn 3 lần gửi!"); return; }
+            fetch(SCRIPT_URL, { method: 'POST', body: new FormData(form) })
+            .then(() => {
+                btn.classList.add('glow');
+                btn.innerText = "Đã gửi thành công!";
+                localStorage.setItem('sentCount', count + 1);
+                setTimeout(() => { .turn("next"); }, 1000);
+            });
+        });
+    });
+</script>
+</body>
+</html>
