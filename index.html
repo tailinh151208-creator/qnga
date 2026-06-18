@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
@@ -6,346 +7,414 @@
 
 <title>Ngô Nguyễn Tài Linh</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-    background:#000;
-    color:white;
-    overflow-x:hidden;
+background:#000;
+color:white;
+overflow-x:hidden;
 }
 
-/* VIDEO BACKGROUND */
+/* VIDEO */
 
-#bg-video{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    z-index:-2;
+video{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-2;
 }
 
 .overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(10,20,40,.45);
-    backdrop-filter:blur(2px);
-    z-index:-1;
+position:fixed;
+inset:0;
+background:rgba(0,20,50,.45);
+backdrop-filter:blur(2px);
+z-index:-1;
 }
 
 /* HERO */
 
 .hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:30px;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:30px;
+gap:25px;
 }
 
-.card{
-    width:700px;
-    max-width:95%;
-    padding:40px;
-
-    background:rgba(255,255,255,.08);
-
-    backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,.15);
-
-    border-radius:28px;
-
-    text-align:center;
-
-    box-shadow:
-    0 0 30px rgba(77,166,255,.3),
-    0 0 80px rgba(77,166,255,.15);
+.glass{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.12);
+box-shadow:
+0 0 30px rgba(82,170,255,.25);
 }
 
-/* AVATAR */
+/* PROFILE CARD */
+
+.main-card{
+width:750px;
+max-width:95%;
+padding:40px;
+border-radius:30px;
+text-align:center;
+}
 
 .avatar{
-    width:140px;
-    height:140px;
-    border-radius:50%;
-    object-fit:cover;
+width:150px;
+height:150px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid #89c8ff;
 
-    border:4px solid #8fc7ff;
-
-    box-shadow:
-    0 0 20px #8fc7ff,
-    0 0 60px #8fc7ff;
+box-shadow:
+0 0 20px #89c8ff,
+0 0 50px #89c8ff,
+0 0 100px rgba(137,200,255,.5);
 }
-
-/* TEXT */
 
 .name{
-    margin-top:20px;
-    font-size:2.8rem;
-    font-weight:700;
+font-size:3rem;
+font-weight:800;
+margin-top:20px;
 
-    color:white;
-
-    text-shadow:
-    0 0 10px #7dc0ff,
-    0 0 25px #7dc0ff;
+text-shadow:
+0 0 10px #fff,
+0 0 25px #8fcfff,
+0 0 50px #8fcfff;
 }
 
-.sub{
-    color:#d7ebff;
-    margin-top:5px;
+.tag{
+margin-top:10px;
+color:#d9efff;
+font-size:1.1rem;
 }
 
-/* ICONS */
+/* SOCIALS */
 
 .socials{
-    margin-top:25px;
-    display:flex;
-    justify-content:center;
-    gap:20px;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+margin-top:25px;
 }
 
 .social{
-    width:55px;
-    height:55px;
+width:55px;
+height:55px;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+display:flex;
+align-items:center;
+justify-content:center;
 
-    border-radius:15px;
+border-radius:15px;
 
-    background:rgba(255,255,255,.1);
+background:rgba(255,255,255,.08);
 
-    transition:.3s;
-
-    color:white;
+transition:.3s;
 }
 
 .social:hover{
-    transform:translateY(-5px);
-    box-shadow:0 0 20px #8fc7ff;
+transform:translateY(-5px);
+
+box-shadow:
+0 0 15px white,
+0 0 30px #6fb9ff;
 }
 
 .social svg{
-    width:28px;
-    height:28px;
-    fill:white;
+width:28px;
+height:28px;
+fill:white;
 }
 
 /* MUSIC */
 
-.music-box{
-    width:700px;
-    max-width:95%;
-    margin:25px auto;
+.music{
+width:750px;
+max-width:95%;
 
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(18px);
+padding:20px;
+border-radius:25px;
 
-    border-radius:25px;
-
-    padding:20px;
-
-    display:flex;
-    align-items:center;
-    gap:20px;
+display:flex;
+align-items:center;
+gap:20px;
 }
 
-.song-cover{
-    width:80px;
-    height:80px;
-    border-radius:15px;
-    object-fit:cover;
+.cover{
+width:90px;
+height:90px;
+border-radius:15px;
+object-fit:cover;
 }
 
 .music-info{
-    flex:1;
+flex:1;
 }
 
-.progress{
-    width:100%;
-    margin-top:10px;
+.song-title{
+font-size:22px;
+font-weight:700;
+
+text-shadow:
+0 0 10px white,
+0 0 25px white;
 }
 
-.controls{
-    display:flex;
-    gap:15px;
-    align-items:center;
+.time{
+display:flex;
+justify-content:space-between;
+margin-top:8px;
+font-size:14px;
 }
 
-/* PROFILE */
-
-.profile{
-    padding:100px 20px;
-    display:flex;
-    justify-content:center;
+#progress{
+width:100%;
+margin-top:10px;
 }
 
-.profile-card{
-    width:900px;
-    max-width:95%;
+#playBtn{
+width:60px;
+height:60px;
 
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(18px);
+border:none;
+border-radius:50%;
 
-    border-radius:30px;
+cursor:pointer;
 
-    padding:40px;
+font-size:24px;
 
-    box-shadow:
-    0 0 20px rgba(77,166,255,.3);
+color:white;
+
+background:rgba(255,255,255,.12);
+
+box-shadow:
+0 0 15px white,
+0 0 35px #6fb9ff;
+
+transition:.3s;
 }
 
-.profile-card h2{
-    color:#9fd2ff;
-
-    text-shadow:
-    0 0 15px #78beff;
-
-    margin-bottom:20px;
+#playBtn:hover{
+transform:scale(1.08);
 }
 
-.profile-card p{
-    line-height:1.8;
-    font-size:1.1rem;
-    color:#edf7ff;
+/* PROFILE SECTION */
+
+.about{
+padding:100px 20px;
+display:flex;
+justify-content:center;
+}
+
+.about-card{
+width:900px;
+max-width:95%;
+padding:40px;
+border-radius:30px;
+}
+
+.about-card h2{
+font-size:2rem;
+
+margin-bottom:25px;
+
+color:#9dd4ff;
+
+text-shadow:
+0 0 15px #9dd4ff;
+}
+
+.about-card p{
+line-height:1.9;
+font-size:1.05rem;
+color:#f5f5f5;
 }
 
 .highlight{
-    color:#8fc7ff;
-    font-weight:600;
+color:#9dd4ff;
+font-weight:700;
+}
+
+/* SCROLL */
+
+.scroll{
+position:absolute;
+bottom:30px;
+
+font-size:14px;
+
+opacity:.8;
+animation:float 2s infinite;
+}
+
+@keyframes float{
+
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
+
+}
+
+@media(max-width:700px){
+
+.name{
+font-size:2rem;
+}
+
+.music{
+flex-direction:column;
+text-align:center;
+}
+
+.cover{
+width:120px;
+height:120px;
+}
+
 }
 
 </style>
+
 </head>
+
 <body>
 
-<!-- VIDEO -->
-<video autoplay muted loop id="bg-video">
-    <source src="video.mp4" type="video/mp4">
+<video autoplay muted loop>
+<source src="background.mp4" type="video/mp4">
 </video>
 
 <div class="overlay"></div>
 
-<!-- HERO -->
 <section class="hero">
 
-<div>
-
-<div class="card">
+<div class="main-card glass">
 
 <img src="avatar.png" class="avatar">
 
-<h1 class="name">Ngô Nguyễn Tài Linh</h1>
+<div class="name">
+Ngô Nguyễn Tài Linh
+</div>
 
-<p class="sub">Huster K71</p>
+<div class="tag">
+🎓 Huster K71
+</div>
 
 <div class="socials">
 
-<a href="#" class="social">
-<!-- Discord -->
-<svg viewBox="0 0 127.14 96.36">
-<path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21H.56A105.73,105.73,0,0,0,32.71,96.36a77.7,77.7,0,0,0,6.89-11.27,68.42,68.42,0,0,1-10.84-5.18c.91-.66,1.8-1.34,2.66-2.05,20.87,9.54,43.53,9.54,64.14,0,.87.71,1.76,1.39,2.67,2.05a68.68,68.68,0,0,1-10.86,5.19,77,77,0,0,0,6.89,11.26,105.25,105.25,0,0,0,32.17-16.15h0C131.08,52.84,123.39,29.11,107.7,8.07Z"/>
-</svg>
+<a class="social" href="#">
+<svg viewBox="0 0 127.14 96.36"><path d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83A97.68 97.68 0 0 0 49 6.83 72.37 72.37 0 0 0 45.64 0 105.89 105.89 0 0 0 19.39 8.09C2.79 32.65-1.71 56.6.54 80.21H.56A105.73 105.73 0 0 0 32.71 96.36a77.7 77.7 0 0 0 6.89-11.27 68.42 68.42 0 0 1-10.84-5.18c.91-.66 1.8-1.34 2.66-2.05 20.87 9.54 43.53 9.54 64.14 0 .87.71 1.76 1.39 2.67 2.05a68.68 68.68 0 0 1-10.86 5.19 77 77 0 0 0 6.89 11.26 105.25 105.25 0 0 0 32.17-16.15h0C131.08 52.84 123.39 29.11 107.7 8.07Z"/></svg>
 </a>
 
-<a href="#" class="social">
-<!-- Facebook -->
-<svg viewBox="0 0 320 512">
-<path d="M279.14 288l14.22-92.66h-88.91V135.97c0-25.35 12.42-50.06 52.24-50.06H297V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39V512h100.17V288z"/>
-</svg>
+<a class="social" href="#">
+📘
 </a>
 
-<a href="#" class="social">
-<!-- TikTok -->
-<svg viewBox="0 0 448 512">
-<path d="M448,209.9a210.1,210.1,0,0,1-122.8-39.3V349.4A162.6,162.6,0,1,1,185,188.3v83.2a74.6,74.6,0,1,0,52.2,71.2V0h88a121.2,121.2,0,0,0,122.8,121.3Z"/>
-</svg>
+<a class="social" href="#">
+🎵
 </a>
 
-<a href="#" class="social">
-<!-- Youtube -->
-<svg viewBox="0 0 576 512">
-<path d="M549.655 124.083c-6.281-23.65-24.814-42.183-48.464-48.464C458.769 64 288 64 288 64S117.231 64 74.809 75.619c-23.65 6.281-42.183 24.814-48.464 48.464C16 166.505 16 256 16 256s0 89.495 10.345 131.917c6.281 23.65 24.814 42.183 48.464 48.464C117.231 448 288 448 288 448s170.769 0 213.191-11.619c23.65-6.281 42.183-24.814 48.464-48.464C560 345.495 560 256 560 256s0-89.495-10.345-131.917zM232 336V176l142 80-142 80z"/>
-</svg>
+<a class="social" href="#">
+▶
 </a>
 
 </div>
 
 </div>
 
-<!-- MUSIC -->
+<div class="music glass">
 
-<div class="music-box">
-
-<img src="song.jpg" class="song-cover">
+<img src="song.jpg" class="cover">
 
 <div class="music-info">
 
-<h3>Your Song</h3>
+<div class="song-title">
+🎵 Your Favorite Song
+</div>
+
+<div class="time">
+<span id="current">0:00</span>
+<span id="duration">0:00</span>
+</div>
+
+<input type="range" id="progress" value="0">
+
+</div>
+
+<button id="playBtn">▶</button>
 
 <audio id="audio" src="music.mp3"></audio>
 
-<input type="range" id="seek" class="progress" value="0">
-
 </div>
 
-<div class="controls">
-
-<button onclick="toggleMusic()">▶</button>
-
-</div>
-
-</div>
-
+<div class="scroll">
+▼ Cuộn xuống
 </div>
 
 </section>
 
-<!-- PROFILE -->
+<section class="about">
 
-<section class="profile">
+<div class="about-card glass">
 
-<div class="profile-card">
-
-<h2>PROFILE</h2>
+<h2>👤 PROFILE</h2>
 
 <p>
-<span class="highlight">Họ tên:</span>
+<span class="highlight">Họ và tên:</span>
 Ngô Nguyễn Tài Linh
 </p>
+
+<br>
 
 <p>
 <span class="highlight">Ngày sinh:</span>
 15/12/2008
 </p>
 
+<br>
+
 <p>
-<span class="highlight">Sở thích:</span><br>
-• Math<br>
-• Casio Tricker<br>
-• Java<br>
-• Valorant<br>
-• Linux<br>
-• Minecraft
+<span class="highlight">Trường:</span>
+HUST K71
 </p>
 
-<p style="margin-top:20px;">
-Đam mê toán học, lập trình và công nghệ mã nguồn mở.
-Yêu thích khám phá Linux, phát triển kỹ năng lập trình Java,
-và giải quyết các bài toán tư duy.
+<br>
+
+<p>
+<span class="highlight">Sở thích:</span><br><br>
+
+🧮 Math<br>
+⌨️ Casio Tricker<br>
+☕ Java<br>
+🎯 Valorant<br>
+🐧 Linux<br>
+⛏️ Minecraft
+
+</p>
+
+<br>
+
+<p>
+Yêu thích toán học, lập trình và công nghệ.
+Đam mê khám phá Linux, giải các bài toán tư duy,
+nghiên cứu Casio và phát triển kỹ năng lập trình.
 </p>
 
 </div>
@@ -354,24 +423,63 @@ và giải quyết các bài toán tư duy.
 
 <script>
 
-const audio = document.getElementById("audio");
-const seek = document.getElementById("seek");
+const audio=document.getElementById("audio");
+const playBtn=document.getElementById("playBtn");
 
-function toggleMusic(){
-    if(audio.paused){
-        audio.play();
-    }else{
-        audio.pause();
-    }
+const progress=document.getElementById("progress");
+
+const current=document.getElementById("current");
+const duration=document.getElementById("duration");
+
+playBtn.onclick=()=>{
+
+if(audio.paused){
+
+audio.play();
+playBtn.innerHTML="❚❚";
+
+}else{
+
+audio.pause();
+playBtn.innerHTML="▶";
+
 }
 
-audio.addEventListener("timeupdate",()=>{
-    seek.value=(audio.currentTime/audio.duration)*100||0;
+};
+
+audio.addEventListener("loadedmetadata",()=>{
+
+duration.innerHTML=format(audio.duration);
+
 });
 
-seek.addEventListener("input",()=>{
-    audio.currentTime=(seek.value/100)*audio.duration;
+audio.addEventListener("timeupdate",()=>{
+
+progress.value=
+(audio.currentTime/audio.duration)*100||0;
+
+current.innerHTML=
+format(audio.currentTime);
+
 });
+
+progress.addEventListener("input",()=>{
+
+audio.currentTime=
+(progress.value/100)*audio.duration;
+
+});
+
+function format(sec){
+
+let m=Math.floor(sec/60);
+let s=Math.floor(sec%60);
+
+if(s<10) s="0"+s;
+
+return m+":"+s;
+
+}
 
 </script>
 
