@@ -3,174 +3,214 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trang Cá Nhân</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Linh Ngo</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
 
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
-    background:linear-gradient(135deg,#0f172a,#1e293b);
-    color:white;
-    min-height:100vh;
+background:#000;
+color:white;
+overflow-x:hidden;
+font-family:Arial,sans-serif;
 }
 
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:25px 10%;
-    backdrop-filter:blur(10px);
+/* VIDEO */
+.video-bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-2;
 }
 
-.logo{
-    font-size:1.8rem;
-    font-weight:700;
-    color:#38bdf8;
+.overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.45);
+z-index:-1;
 }
 
-nav ul{
-    display:flex;
-    gap:25px;
-    list-style:none;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    transition:0.3s;
-}
-
-nav a:hover{
-    color:#38bdf8;
-}
+/* HERO */
 
 .hero{
-    min-height:85vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:20px;
-}
-
-.card{
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(15px);
-    border:1px solid rgba(255,255,255,0.15);
-    border-radius:25px;
-    padding:50px;
-    max-width:700px;
-    box-shadow:0 10px 40px rgba(0,0,0,0.4);
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
 }
 
 .avatar{
-    width:160px;
-    height:160px;
-    border-radius:50%;
-    object-fit:cover;
-    border:5px solid #38bdf8;
-    margin-bottom:20px;
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid #00ffff;
+box-shadow:
+0 0 15px #00ffff,
+0 0 30px #00ffff;
+margin-bottom:25px;
 }
 
-h1{
-    font-size:3rem;
-    margin-bottom:10px;
+.name{
+font-family:'Orbitron',sans-serif;
+font-size:5rem;
+font-weight:900;
+letter-spacing:8px;
+color:#00ffff;
+
+text-shadow:
+0 0 10px #00ffff,
+0 0 20px #00ffff,
+0 0 40px #00ffff,
+0 0 80px #00ffff;
 }
 
-.highlight{
-    color:#38bdf8;
+.sub{
+margin-top:15px;
+color:#ccc;
+letter-spacing:4px;
 }
 
-p{
-    color:#d1d5db;
-    line-height:1.8;
-    margin-bottom:25px;
-}
-
-.buttons{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    flex-wrap:wrap;
+.links{
+margin-top:35px;
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+justify-content:center;
 }
 
 .btn{
-    padding:12px 25px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:600;
-    transition:0.3s;
+padding:12px 24px;
+border:2px solid #00ffff;
+color:#00ffff;
+text-decoration:none;
+border-radius:50px;
+transition:.3s;
+box-shadow:
+0 0 10px #00ffff;
 }
 
-.primary{
-    background:#38bdf8;
-    color:#0f172a;
+.btn:hover{
+background:#00ffff;
+color:black;
+transform:translateY(-5px);
+box-shadow:
+0 0 20px #00ffff,
+0 0 40px #00ffff;
 }
 
-.primary:hover{
-    transform:translateY(-4px);
+.scroll{
+margin-top:50px;
+font-size:1.1rem;
+animation:updown 1.5s infinite;
 }
 
-.secondary{
-    border:2px solid #38bdf8;
-    color:#38bdf8;
+@keyframes updown{
+50%{
+transform:translateY(10px);
+}
 }
 
-.secondary:hover{
-    background:#38bdf8;
-    color:#0f172a;
+/* ABOUT */
+
+.about{
+min-height:100vh;
+padding:120px 10%;
+background:#050505;
 }
 
-footer{
-    text-align:center;
-    padding:25px;
-    color:#94a3b8;
+.about-box{
+max-width:1000px;
+margin:auto;
 }
+
+.about h2{
+font-family:'Orbitron';
+font-size:3rem;
+margin-bottom:30px;
+color:#00ffff;
+text-shadow:0 0 15px #00ffff;
+}
+
+.about p{
+font-size:1.1rem;
+line-height:1.9;
+color:#ddd;
+}
+
 </style>
 </head>
-
 <body>
 
-<nav>
-    <div class="logo">MY WEB</div>
+<!-- VIDEO -->
+<video autoplay muted loop playsinline class="video-bg">
+<source src="video.mp4" type="video/mp4">
+</video>
 
-    <ul>
-        <li><a href="#">Trang chủ</a></li>
-        <li><a href="#">Giới thiệu</a></li>
-        <li><a href="#">Dự án</a></li>
-        <li><a href="#">Liên hệ</a></li>
-    </ul>
-</nav>
+<div class="overlay"></div>
 
 <section class="hero">
-    <div class="card">
-        <img src="https://i.pravatar.cc/300" alt="avatar" class="avatar">
 
-        <h1>Xin chào, tôi là <span class="highlight">Tên Của Bạn</span></h1>
+<img src="avatar.jpg" class="avatar">
 
-        <p>
-            Chào mừng đến với trang web cá nhân của tôi.
-            Tôi yêu công nghệ, thiết kế và sáng tạo những điều thú vị.
-            Đây là nơi tôi chia sẻ thông tin, dự án và những điều mình đang theo đuổi.
-        </p>
+<h1 class="name">LINH NGO</h1>
 
-        <div class="buttons">
-            <a href="#" class="btn primary">Xem Dự Án</a>
-            <a href="#" class="btn secondary">Liên Hệ</a>
-        </div>
-    </div>
+<p class="sub">CYBERPUNK • CREATOR • GAMER</p>
+
+<div class="links">
+<a href="https://facebook.com/yourlink" class="btn">Facebook</a>
+
+<a href="https://discord.gg/yourlink" class="btn">Discord</a>
+
+<a href="https://m.me/yourlink" class="btn">Messenger</a>
+
+<a href="https://zalo.me/yourlink" class="btn">Zalo</a>
+</div>
+
+<div class="scroll">
+↓ Scroll Down
+</div>
+
 </section>
 
-<footer>
-    © 2026 - Thiết kế bởi Bạn ✨
-</footer>
+<section class="about">
+
+<div class="about-box">
+
+<h2>GIỚI THIỆU</h2>
+
+<p>
+Xin chào, mình là Linh Ngo.
+
+Đây là website cá nhân nơi mình chia sẻ thông tin, dự án,
+đam mê công nghệ, thiết kế và những điều thú vị trong cuộc sống.
+
+Bạn có thể theo dõi mình qua Facebook, Discord,
+Messenger hoặc Zalo ở phía trên.
+</p>
+
+</div>
+
+</section>
 
 </body>
 </html>
