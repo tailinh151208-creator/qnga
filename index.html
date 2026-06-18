@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Linh Ngo</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
 
 <style>
@@ -22,13 +22,13 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#000;
+background:black;
 color:white;
 overflow-x:hidden;
-font-family:Arial,sans-serif;
 }
 
-/* VIDEO */
+/* VIDEO NỀN */
+
 .video-bg{
 position:fixed;
 top:0;
@@ -46,35 +46,41 @@ background:rgba(0,0,0,.45);
 z-index:-1;
 }
 
-/* HERO */
+/* HEADER */
 
-.hero{
-height:100vh;
+.header{
+position:absolute;
+top:25px;
+left:30px;
+
 display:flex;
-flex-direction:column;
-justify-content:center;
 align-items:center;
-text-align:center;
-padding:20px;
+gap:20px;
 }
+
+/* AVATAR */
 
 .avatar{
-width:120px;
-height:120px;
+width:90px;
+height:90px;
 border-radius:50%;
 object-fit:cover;
+
 border:3px solid #00ffff;
+
 box-shadow:
-0 0 15px #00ffff,
-0 0 30px #00ffff;
-margin-bottom:25px;
+0 0 10px #00ffff,
+0 0 20px #00ffff,
+0 0 40px #00ffff;
 }
+
+/* TÊN */
 
 .name{
 font-family:'Orbitron',sans-serif;
-font-size:5rem;
+font-size:3rem;
 font-weight:900;
-letter-spacing:8px;
+
 color:#00ffff;
 
 text-shadow:
@@ -84,53 +90,59 @@ text-shadow:
 0 0 80px #00ffff;
 }
 
-.sub{
-margin-top:15px;
-color:#ccc;
-letter-spacing:4px;
-}
+/* TRANG ĐẦU */
 
-.links{
-margin-top:35px;
+.hero{
+height:100vh;
+
 display:flex;
-flex-wrap:wrap;
-gap:15px;
+flex-direction:column;
 justify-content:center;
+align-items:center;
 }
 
-.btn{
-padding:12px 24px;
-border:2px solid #00ffff;
-color:#00ffff;
-text-decoration:none;
-border-radius:50px;
+/* ICON SOCIAL */
+
+.socials{
+display:flex;
+gap:25px;
+margin-top:120px;
+}
+
+.socials a img{
+width:60px;
+height:60px;
+
 transition:.3s;
-box-shadow:
-0 0 10px #00ffff;
+
+filter:
+drop-shadow(0 0 10px cyan)
+drop-shadow(0 0 20px cyan);
 }
 
-.btn:hover{
-background:#00ffff;
-color:black;
-transform:translateY(-5px);
-box-shadow:
-0 0 20px #00ffff,
-0 0 40px #00ffff;
+.socials a:hover img{
+transform:translateY(-8px) scale(1.1);
+
+filter:
+drop-shadow(0 0 15px cyan)
+drop-shadow(0 0 40px cyan);
 }
+
+/* SCROLL */
 
 .scroll{
 margin-top:50px;
-font-size:1.1rem;
-animation:updown 1.5s infinite;
+font-size:20px;
+animation:move 1.5s infinite;
 }
 
-@keyframes updown{
+@keyframes move{
 50%{
 transform:translateY(10px);
 }
 }
 
-/* ABOUT */
+/* GIỚI THIỆU */
 
 .about{
 min-height:100vh;
@@ -138,77 +150,99 @@ padding:120px 10%;
 background:#050505;
 }
 
-.about-box{
-max-width:1000px;
-margin:auto;
-}
-
 .about h2{
 font-family:'Orbitron';
 font-size:3rem;
-margin-bottom:30px;
+
 color:#00ffff;
-text-shadow:0 0 15px #00ffff;
+
+margin-bottom:30px;
 }
 
 .about p{
-font-size:1.1rem;
-line-height:1.9;
-color:#ddd;
+font-size:1.2rem;
+line-height:2;
+max-width:1000px;
 }
 
 </style>
 </head>
+
 <body>
 
-<!-- VIDEO -->
+<!-- VIDEO CỦA BẠN -->
 <video autoplay muted loop playsinline class="video-bg">
-<source src="video.mp4" type="video/mp4">
+<source src="background.mp4" type="video/mp4">
 </video>
 
 <div class="overlay"></div>
 
-<section class="hero">
+<!-- GÓC TRÁI -->
 
-<img src="avatar.jpg" class="avatar">
+<div class="header">
+
+<!-- ẢNH CỦA BẠN -->
+<img src="avatar.png" class="avatar">
 
 <h1 class="name">LINH NGO</h1>
 
-<p class="sub">CYBERPUNK • CREATOR • GAMER</p>
+</div>
 
-<div class="links">
-<a href="https://facebook.com/yourlink" class="btn">Facebook</a>
+<!-- MÀN HÌNH CHÍNH -->
 
-<a href="https://discord.gg/yourlink" class="btn">Discord</a>
+<section class="hero">
 
-<a href="https://m.me/yourlink" class="btn">Messenger</a>
+<div class="socials">
 
-<a href="https://zalo.me/yourlink" class="btn">Zalo</a>
+<!-- FACEBOOK -->
+<a href="https://www.facebook.com/linh.ngo.114992?locale=vi_VN">
+<img src="icons/facebook.png">
+</a>
+
+<!-- DISCORD -->
+<a href="https://discord.gg/users/1107623702532718642">
+<img src="icons/discord.png">
+</a>
+
+<!-- MESSENGER -->
+<a href="https://www.facebook.com/linh.ngo.114992?locale=vi_VN">
+<img src="icons/messenger.png">
+</a>
+
+<!-- ZALO -->
+<a href="https://zalo.me/0867767889](https://zalo.me/0867767889">
+<img src="icons/zalo.png">
+</a>
+
 </div>
 
 <div class="scroll">
-↓ Scroll Down
+↓ Cuộn xuống
 </div>
 
 </section>
 
-<section class="about">
+<!-- GIỚI THIỆU -->
 
-<div class="about-box">
+<section class="about">
 
 <h2>GIỚI THIỆU</h2>
 
 <p>
+
+🔥 THAY PHẦN NÀY BẰNG GIỚI THIỆU CỦA BẠN 🔥
+
+Ví dụ:
+
 Xin chào, mình là Linh Ngo.
 
-Đây là website cá nhân nơi mình chia sẻ thông tin, dự án,
-đam mê công nghệ, thiết kế và những điều thú vị trong cuộc sống.
+Mình đam mê công nghệ, thiết kế website,
+chỉnh sửa video và khám phá những điều mới.
 
-Bạn có thể theo dõi mình qua Facebook, Discord,
-Messenger hoặc Zalo ở phía trên.
+Đây là nơi mình chia sẻ thông tin cá nhân,
+các dự án và cách để mọi người liên hệ với mình.
+
 </p>
-
-</div>
 
 </section>
 
